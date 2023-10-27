@@ -1,7 +1,3 @@
-let numOne = "";
-let numTwo = "";
-let operator = "";
-
 const digitsContainer = document.querySelector("#digits");
 
 const operatorsContainer = document.querySelector("#operators");
