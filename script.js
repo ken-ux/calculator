@@ -2,7 +2,6 @@ const numsContainer = document.querySelector("#nums");
 const operatorsContainer = document.querySelector("#operators");
 const operatorSymbols = ["+", "-", "*", "/", "="];
 const resultField = document.querySelector("#result");
-const clearButton = document.querySelector("#clear");
 
 let storedCalculation = {
   numOne: { value: "", chosen: false },
@@ -10,16 +9,20 @@ let storedCalculation = {
   operator: "",
 };
 
-clearButton.addEventListener("click", () => clearResult());
-
 // Create number buttons
-for (let i = 0; i <= 9; i++) {
+for (let i = 1; i <= 9; i++) {
   let button = document.createElement("button");
   button.textContent = i;
   button.id = i;
   button.addEventListener("click", () => storeNum(button.id));
   numsContainer.appendChild(button);
 }
+
+let zeroButton = document.createElement("button");
+zeroButton.textContent = 0;
+zeroButton.id = 0;
+zeroButton.addEventListener("click", () => storeNum(zeroButton.id));
+numsContainer.appendChild(zeroButton);
 
 // Create operator buttons
 for (let i = 0; i < operatorSymbols.length; i++) {
@@ -29,6 +32,12 @@ for (let i = 0; i < operatorSymbols.length; i++) {
   button.addEventListener("click", () => storeOperator(button.id));
   operatorsContainer.appendChild(button);
 }
+
+let clearButton = document.createElement("button");
+clearButton.textContent = "C";
+clearButton.id = "clear";
+operatorsContainer.appendChild(clearButton);
+clearButton.addEventListener("click", () => clearResult());
 
 function storeNum(num) {
   if (storedCalculation.numOne.chosen === false) {
