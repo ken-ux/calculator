@@ -1,0 +1,50 @@
+* {
+  font-size: 32px;
+}
+
+.resultsContainer {
+    background-color: salmon;
+    border-radius: 15px;
+}
+
+#result {
+    text-align: right;
+    padding: 20px;
+    color: white;
+}
+
+.container {
+  max-width: 400px;
+  background-color: peachpuff;
+  border: 3px solid salmon;
+  margin: 150px auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 0px salmon;
+}
+
+.buttons {
+    display: flex;
+    padding: 20px 0px;
+  }
+
+#nums,
+#operators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#nums button {
+  width: calc(100% / 3);
+}
+
+#operators {
+  flex-direction: column;
+  width: 40%;
+  justify-content: start;
+}
+
+#operators button {
+  height: calc(100% / 4);
+}
