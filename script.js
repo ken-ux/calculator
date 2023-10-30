@@ -1,4 +1,4 @@
-const digitsContainer = document.querySelector("#digits");
+const numsContainer = document.querySelector("#nums");
 const operatorsContainer = document.querySelector("#operators");
 const operatorSymbols = ["+", "-", "*", "/", "="];
 const resultField = document.querySelector("#result");
@@ -13,13 +13,13 @@ let storedCalculation = {
 
 clearButton.addEventListener("click", () => clearResult());
 
-// Create digit buttons
+// Create number buttons
 for (let i = 1; i <= 9; i++) {
   let button = document.createElement("button");
   button.textContent = i;
   button.id = i;
     button.addEventListener("click", () => storeNum(button.id));
-  digitsContainer.appendChild(button);
+  numsContainer.appendChild(button);
 }
 
 // Create operator buttons
