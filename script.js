@@ -13,7 +13,7 @@ let storedCalculation = {
 clearButton.addEventListener("click", () => clearResult());
 
 // Create number buttons
-for (let i = 1; i <= 9; i++) {
+for (let i = 0; i <= 9; i++) {
   let button = document.createElement("button");
   button.textContent = i;
   button.id = i;
