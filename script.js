@@ -44,18 +44,26 @@ function storeOperator(operator) {
   if (!storedCalculation.numOne.chosen) {
     storedCalculation.numOne.chosen = true;
     storedCalculation.operator = operator;
-  } else if (storedCalculation.numTwo.value !== "") {
+  } else if (
+    storedCalculation.numTwo.value !== "" &&
+    storedCalculation.operator !== ""
+  ) {
     // do calculation
     operate(
       storedCalculation.operator,
       storedCalculation.numOne.value,
       storedCalculation.numTwo.value
     );
+    if (operator !== "=") {
+      storedCalculation.operator = operator;
+    } else {
+      storedCalculation.operator = "";
+    }
+  } else if (storedCalculation.operator === "") {
     storedCalculation.operator = operator;
   } else {
     alert("Please choose a second number first!");
   }
-  console.log(storedCalculation);
 }
 
 function operate(operator, numOne, numTwo) {
@@ -76,6 +84,14 @@ function operate(operator, numOne, numTwo) {
   }
 }
 
+function updateStoredCalculation(num) {
+  storedCalculation.numOne.value = num;
+  storedCalculation.numOne.chosen = true;
+  storedCalculation.numTwo.value = "";
+  storedCalculation.operator = "";
+  resultField.textContent = num;
+}
+
 function add(numOne, numTwo) {
   return numOne + numTwo;
 }
@@ -90,14 +106,6 @@ function multiply(numOne, numTwo) {
 
 function divide(numOne, numTwo) {
   return numOne / numTwo;
-}
-
-function updateStoredCalculation(num) {
-  storedCalculation.numOne.value = num;
-  storedCalculation.numOne.chosen = true;
-  storedCalculation.numTwo.value = "";
-  storedCalculation.operator = "";
-  resultField.textContent = num;
 }
 
 function clearResult() {
