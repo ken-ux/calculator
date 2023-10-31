@@ -105,7 +105,12 @@ function operate(operator, numOne, numTwo) {
   } else if (operator === "×") {
     updateStoredCalculation(multiply(numOne, numTwo));
   } else if (operator === "÷") {
-    updateStoredCalculation(divide(numOne, numTwo));
+    if (numTwo === 0) {
+      alert("You can't divide by zero! Clearing numbers now.");
+      clearResult();
+    } else {
+      updateStoredCalculation(divide(numOne, numTwo));
+    }
   }
 }
 
