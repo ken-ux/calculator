@@ -50,7 +50,11 @@ function storeNum(num) {
 }
 
 function storeOperator(operator) {
-  if (!storedCalculation.numOne.chosen) {
+  console.log(storedCalculation);
+  if (
+    !storedCalculation.numOne.chosen &&
+    storedCalculation.numOne.value !== ""
+  ) {
     storedCalculation.numOne.chosen = true;
     storedCalculation.operator = operator;
   } else if (
@@ -68,8 +72,16 @@ function storeOperator(operator) {
     } else {
       storedCalculation.operator = "";
     }
-  } else if (storedCalculation.operator === "") {
+  } else if (
+    storedCalculation.numOne.value !== "" &&
+    storedCalculation.operator === ""
+  ) {
     storedCalculation.operator = operator;
+  } else if (
+    storedCalculation.numOne.value === "" &&
+    storedCalculation.operator === ""
+  ) {
+    alert("Please choose a number first!");
   } else {
     alert("Please choose a second number first!");
   }
