@@ -5,18 +5,18 @@
 }
 
 body {
-    background-color: floralwhite;
+  background-color: floralwhite;
 }
 
 .resultsContainer {
-    background-color: salmon;
-    border-radius: 15px;
-    border: 3px solid white;
+  background-color: salmon;
+  border-radius: 15px;
+  border: 3px solid white;
 }
 
 #result {
-    text-align: right;
-    padding: 20px;
+  text-align: right;
+  padding: 20px;
 }
 
 .container {
@@ -30,9 +30,9 @@ body {
 }
 
 .buttons {
-    display: flex;
-    padding: 20px 0px;
-  }
+  display: flex;
+  padding: 20px 0px;
+}
 
 #nums,
 #operators {
@@ -58,10 +58,10 @@ body {
 }
 
 button {
-    border-radius: 10px;
-    border: 1px solid white;
+  border-radius: 10px;
+  border: 1px solid white;
 }
 
 button:hover {
-    opacity: 50%;
+  opacity: 50%;
 }
