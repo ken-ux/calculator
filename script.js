@@ -34,7 +34,7 @@ for (let i = 0; i < operatorSymbols.length; i++) {
 }
 
 let clearButton = document.createElement("button");
-clearButton.textContent = "C";
+clearButton.textContent = "c";
 clearButton.id = "clear";
 operatorsContainer.appendChild(clearButton);
 clearButton.addEventListener("click", () => clearResult());
@@ -55,8 +55,12 @@ function storeOperator(operator) {
     !storedCalculation.numOne.chosen &&
     storedCalculation.numOne.value !== ""
   ) {
-    storedCalculation.numOne.chosen = true;
-    storedCalculation.operator = operator;
+    if (operator === "=") {
+      alert("You cannot use the '=' sign yet.");
+    } else {
+      storedCalculation.numOne.chosen = true;
+      storedCalculation.operator = operator;
+    }
   } else if (
     storedCalculation.numTwo.value !== "" &&
     storedCalculation.operator !== ""
