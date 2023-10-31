@@ -50,7 +50,6 @@ function storeNum(num) {
 }
 
 function storeOperator(operator) {
-  console.log(storedCalculation);
   if (
     !storedCalculation.numOne.chosen &&
     storedCalculation.numOne.value !== ""
