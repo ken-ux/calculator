@@ -1,6 +1,6 @@
 const numsContainer = document.querySelector("#nums");
 const operatorsContainer = document.querySelector("#operators");
-const operatorSymbols = ["+", "-", "*", "/", "="];
+const operatorSymbols = ["+", "-", "×", "÷", "="];
 const resultField = document.querySelector("#result");
 
 let storedCalculation = {
@@ -86,9 +86,9 @@ function operate(operator, numOne, numTwo) {
     updateStoredCalculation(add(numOne, numTwo));
   } else if (operator === "-") {
     updateStoredCalculation(subtract(numOne, numTwo));
-  } else if (operator === "*") {
+  } else if (operator === "×") {
     updateStoredCalculation(multiply(numOne, numTwo));
-  } else if (operator === "/") {
+  } else if (operator === "÷") {
     updateStoredCalculation(divide(numOne, numTwo));
   }
 }
